@@ -1,0 +1,37 @@
+# DoctorService-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doctorapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doctorapp
+      version: "v1"
+  template:
+    metadata:
+      labels:
+        app: doctorapp
+        version: "v1"
+    spec:
+      containers:
+      - name: doctorapp
+        image: saketcontainerregistry.azurecr.io/doctorservice:v20
+        ports:
+        - containerPort: 8500
+          name: http
+---
+# DoctorService-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: doctorservice
+  labels: 
+    app: doctorapp
+spec:
+  ports:
+  - port: 8500
+    name: http
+  selector:
+    app: doctorapp

@@ -1,0 +1,34 @@
+# voting-app-virtualservice.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: doctor-app-vs-gateway
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - application-gateway
+
+  http:
+  - match:
+    - uri:
+        prefix: /
+      headers:
+         test:
+           exact: canary-test
+    route:
+    - destination:
+        host: doctorservice.doctor.svc.cluster.local
+        subset: v21
+        port:
+         number: 8500       
+  - match:
+    - uri:
+        prefix: /
+
+    route:
+    - destination:
+        host: doctorservice.doctor.svc.cluster.local
+        subset: v20
+        port:
+         number: 8500    

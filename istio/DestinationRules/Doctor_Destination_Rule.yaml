@@ -1,0 +1,29 @@
+# doctor-policy.yaml
+#apiVersion: "authentication.istio.io/v1alpha1"
+#kind: "Policy"
+#metadata:
+#  name: "default"
+#spec:
+#  peers:
+#  - mtls: 
+#     mode: STRICT
+#---
+# doctor-app-destinationrule-1.0.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: doctorappv2desrule
+spec:
+  host: doctorservice.doctor.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+  subsets:
+  - name: v21
+    labels:
+      app: doctorapp
+      version: "v21"
+  - name: v20
+    labels:
+      app: doctorapp
+      version: "v1"    

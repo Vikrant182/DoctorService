@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: doctorservice
+
+server:
+  port: 8500    
