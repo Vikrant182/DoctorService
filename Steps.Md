@@ -74,10 +74,10 @@ Canary Deployment Steps
       click on the repository you will see the tag attached to it.  
       
   3. Deploy the image to K8 cluster
-   - Create a deployment file (use   deployment.yaml under kubernetes/v2 folder) and run
-   - kubectl apply -f <path of the deployment file> -n <namespace with istio injection enabled>. 
-     This should create a Deployment and a pod in the namespace mentioned.
-   - This should also create a service for the pod.
+	   - Create a deployment file (use   deployment.yaml under kubernetes/v2 folder) and run
+	   - kubectl apply -f <path of the deployment file> -n <namespace with istio injection enabled>. 
+	     This should create a Deployment and a pod in the namespace mentioned.
+	   - This should also create a service for the pod.
    
   4. Describe your pod and note down the ip address assigned by DNS server pod to it
      - Run kubectl get pod <pod name> -n <namespace> -o wide.
