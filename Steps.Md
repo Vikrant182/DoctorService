@@ -108,4 +108,10 @@ Switch to latest Version app
 
 Canary deployment complete
 -----------------------------------------------------------------------------------  
+
+Generate the Certificate for your Host
+----------------------------------------------------------------------------------
+ 1. ./generate.sh <domain name> docmesh
+
+
             
