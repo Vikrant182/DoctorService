@@ -7,12 +7,20 @@ spec:
     istio: ingressgateway
   servers:
   - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "saket.eastus.cloudapp.azure.com"
+    tls:
+      httpsRedirect: true  
+  - port:
       number: 443
-      name: https
+      name: https 
       protocol: HTTPS
     tls:
       mode: SIMPLE
       serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
       privateKey: /etc/istio/ingressgateway-certs/tls.key  
     hosts:
-    - "137.135.83.231"
+    - "saket.eastus.cloudapp.azure.com"

@@ -29,21 +29,21 @@ public class DoctorControllerImpl implements IDoctorController {
 	 * Returns list of Doctors information registered with  system
 	 **************************************************************/
 	public ResponseEntity<List<DocRespModel>> getAllDocsInfo() {
-		return ResponseEntity.status(HttpStatus.FOUND).body(doctorService.findAllDocsInfo());
+		return ResponseEntity.status(HttpStatus.OK).body(doctorService.findAllDocsInfo());
 	}
 
 	/**************************************************************
 	 * Returns one Doctor information based on doctor id
 	 **************************************************************/
 	public ResponseEntity<DocRespModel> getDocsInfoByDocId(int docId) {
-		return ResponseEntity.status(HttpStatus.FOUND).body(doctorService.findDocsInfoByDocId(docId));
+		return ResponseEntity.status(HttpStatus.OK).body(doctorService.findDocsInfoByDocId(docId));
 	}
 
 	/**************************************************************
 	 * Returns one Doctor information based on doctor name
 	 **************************************************************/
 	public ResponseEntity<DocRespModel> getDocsInfoByDocName(String docName) {
-		 return ResponseEntity.status(HttpStatus.FOUND).body(doctorService.findDocsInfoByDocName(docName));
+		 return ResponseEntity.status(HttpStatus.OK).body(doctorService.findDocsInfoByDocName(docName));
 	}
 
 }

@@ -5,7 +5,7 @@ metadata:
   name: doctor-app-vs-gateway
 spec:
   hosts:
-  - "137.135.83.231"
+  - "saket.eastus.cloudapp.azure.com"
   gateways:
   - application-gateway
 
@@ -19,7 +19,7 @@ spec:
     route:
     - destination:
         host: doctorservice.doctor.svc.cluster.local
-        subset: v21
+        subset: v22
         port:
          number: 8500       
   - match:
