@@ -2,25 +2,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: doctorapp
+  name: doctorapp-v22
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: doctorapp
-      version: "v1"
+      version: "v22"
   template:
     metadata:
       labels:
         app: doctorapp
-        version: "v1"
+        version: "v22"
     spec:
       containers:
       - name: doctorapp
-        image: saketcontainerregistry.azurecr.io/doctorservice:v20
+        image: saketcontainerregistry.azurecr.io/doctorservice:v22
         ports:
         - containerPort: 8500
-          name: http
+          name: https
 ---
 # DoctorService-service.yaml
 apiVersion: v1
@@ -32,6 +32,6 @@ metadata:
 spec:
   ports:
   - port: 8500
-    name: http
+    name: https
   selector:
     app: doctorapp

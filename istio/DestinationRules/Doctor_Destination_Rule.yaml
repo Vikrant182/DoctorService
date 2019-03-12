@@ -31,3 +31,7 @@ spec:
     labels:
       app: doctorapp
       version: "v1"    
+  - name: v23
+    labels:
+      app: doctorapp
+      version: "v23"     

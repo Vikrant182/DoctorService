@@ -33,9 +33,9 @@ public class DoctorServiceImplStub implements IDoctorService {
 		{
 			DocRespModel model = new DocRespModel();
 			model.setId(i);
-			model.setAddress("gali"+i);
-			model.setName("naam"+i);
-			model.setContactNo("10000"+i);
+			model.setAddress("strausseeeee"+i);
+			model.setName("doctora"+i);
+			model.setContactNo("878787"+i);
 			docModelList.add(model);
 		}
 		

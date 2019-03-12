@@ -16,7 +16,7 @@ spec:
     route:
     - destination:
         host: doctorservice.doctor.svc.cluster.local
-        subset: v2
+        subset: v23
         port:
          number: 8500       
   - match:
@@ -26,6 +26,6 @@ spec:
     route:
     - destination:
         host: doctorservice.doctor.svc.cluster.local
-        subset: v1
+        subset: v22
         port:
          number: 8500
